@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    hikari:
+      pool-name: HikariPool-Memes
+      minimumIdle: 2
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
+  endpoint:
+   health:
+     show-details: always
+     probes:
+       enabled: true
+     livenessState:
+       enabled: true
+     readinessState:
+       enabled: true
+     group:
+        liveness:
+          show-details: always
+          include: "livenessState"
+        readiness:
+          show-details: always
+          include: "readinessState, db"

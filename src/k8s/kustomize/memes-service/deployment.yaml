@@ -1,0 +1,39 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: memes-deployment
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  minReadySeconds: 5
+  template:
+    spec:
+      containers:
+        - name: memes-service
+          image: europe-west3-docker.pkg.dev/pingpong-site1-gcp-demo/memes-docker/memes-service:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              memory: 500Mi
+          readinessProbe:
+            initialDelaySeconds: 5
+            periodSeconds: 1
+            timeoutSeconds: 1
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+          livenessProbe:
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 1
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+          env:
+            - name: JAVA_OPTS
+              value: "-Dspring.profiles.active=postgres"
