@@ -43,7 +43,7 @@ helm3 upgrade --install memes-database bitnami/postgresql -n memes -f ${HELM_DAT
 
 # Create the memes-service using Helm, show outputs
 
-helm3 upgrade --install memes-service ${HELM_MEMES_DIR} -n memes --wait
+helm3 upgrade --install memes-service ${HELM_MEMES_DIR} -n memes -f ${HELM_MEMES_DIR}/values-dev.yaml --wait
 
 # Verify
 # http://memes.waymark.se/meme
