@@ -24,11 +24,11 @@ KUSTOMIZE_DIR="$ROOT_DIR/kustomize"
 KUSTOMIZE_MEMES_DIR="$KUSTOMIZE_DIR/memes-service"
 
 # Create the memes-service using Kustomize, show outputs
-kustomize build ${KUSTOMIZE_MEMES_DIR}
+# kustomize build ${KUSTOMIZE_MEMES_DIR}
 
-kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl apply -f -
+# kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl apply -f -
 
-#kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl delete -f -
+# kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl delete -f -
 
 
 HELM_DIR="$ROOT_DIR/helm"
