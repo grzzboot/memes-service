@@ -40,6 +40,7 @@ kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl apply -f -
 
 HELM_DIR="$ROOT_DIR/helm"
 HELM_DATABASE_DIR="$HELM_DIR/memes-database"
+HELM_MEMES_DIR="$HELM_DIR/memes-service"
 
 # Install a database using Helm3, show output and debug
 helm3 repo add bitnami https://charts.bitnami.com/bitnami
@@ -48,3 +49,8 @@ helm3 repo update
 helm3 upgrade --install memes-database bitnami/postgresql -n memes -f ${HELM_DATABASE_DIR}/values-memes.yaml --wait
 
 # Create the memes-service using Helm, show outputs
+
+helm3 upgrade --install memes-service ${HELM_MEMES_DIR} -n memes --wait
+
+# Verify
+http://memes.waymark.se/meme
