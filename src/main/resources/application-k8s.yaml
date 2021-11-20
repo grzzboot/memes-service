@@ -1,9 +1,11 @@
 spring:
   datasource:
-    username: ${CONFIG_DATASOURCE_USERNAME:postgres}
-    password: ${CONFIG_DATASOURCE_PASSWORD:postgres}
-    url: ${CONFIG_DATASOURCE_URL:jdbc:postgresql://memes-database-service:5432/postgres}
-    driver-class-name: ${CONFIG_DATASOURCE_DRIVER:org.postgresql.Driver}
+    username: ${CONFIG_DATASOURCE_USERNAME}
+    password: ${CONFIG_DATASOURCE_PASSWORD}
+    url: ${CONFIG_DATASOURCE_URL}
+    driver-class-name: ${CONFIG_DATASOURCE_DRIVER}
     hikari:
-      minimumIdle: ${CONFIG_DATASOURCE_HIKARI_MINIMUM_IDLE:2}
-      maximumPoolSize: ${CONFIG_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE:10}
+      minimumIdle: ${CONFIG_DATASOURCE_HIKARI_MINIMUM_IDLE}
+      maximumPoolSize: ${CONFIG_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE}
+  flyway:
+    enabled: true

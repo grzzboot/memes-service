@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: memes-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: memes.waymark.se
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: memes-service
+                port:
+                  number: 8080

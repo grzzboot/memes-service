@@ -4,7 +4,7 @@ spring:
       pool-name: HikariPool-Memes
       minimumIdle: 2
   flyway:
-    enabled: true
+    enabled: false
 
 management:
   endpoints:

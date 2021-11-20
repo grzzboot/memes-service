@@ -1,0 +1,5 @@
+postgresqlPassword: postgres
+postgresqlDatabase: postgres
+
+persistence:
+  enabled: false

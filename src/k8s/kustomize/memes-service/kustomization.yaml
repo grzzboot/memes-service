@@ -1,9 +1,12 @@
 kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 
+namespace: memes
+
 commonLabels:
   component: memes
 
 resources:
 - deployment.yaml
 - service.yaml
+- ingress.yaml

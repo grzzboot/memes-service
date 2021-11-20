@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-config
+data:
+  CONFIG_DATASOURCE_URL: jdbc:postgresql://memes-database-postgresql-headless:5432/postgres
+  CONFIG_DATASOURCE_DRIVER: org.postgresql.Driver
+  CONFIG_DATASOURCE_HIKARI_MINIMUM_IDLE: "2"
+  CONFIG_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: "10"

@@ -1,5 +1,3 @@
-SET DATABASE SQL SYNTAX PGS TRUE;
-
 INSERT INTO MEMES (MEME) VALUES
 	('People say nothing is impossible, but I do nothing every day.'),
 	('Better to remain silent and be thought a fool than to speak out and remove all doubt.'),

@@ -36,4 +36,17 @@ spec:
               port: 8080
           env:
             - name: JAVA_OPTS
-              value: "-Dspring.profiles.active=postgres"
+              value: "-Dspring.profiles.active=k8s"
+            - name: CONFIG_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: username
+            - name: CONFIG_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: password
+          envFrom:
+            - configMapRef:
+                name: database-config

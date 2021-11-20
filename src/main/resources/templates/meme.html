@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="sv-se">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Waymark Meme App</title>
+
+    <link href="http://waymark.se/css/style.css" rel="stylesheet">
+
+    <link href="http://waymark.se/favicon.ico" rel="SHORTCUT ICON" />
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container">
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <img class="pull-left brand-logo" alt="Waymark" src="http://waymark.se/img/waymark-logo.png" />
+            <span class="brand-name">WAYMARK</span>
+          </a>
+          <div id="nav-icon"
+               class="pull-right visible-xs collapsed"
+               data-toggle="collapse"
+               data-target="#waymark-navbar-collapse"
+               aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+    <div id="waymark-main">
+      <div class="jumbotron waymark-jumbotron">
+        <img class="img-responsive hidden-xs" src="http://waymark.se/img/jumbo-wide-1.jpg" />
+        <img class="img-responsive visible-xs" src="http://waymark.se/img/jumbo-16-9-1.jpg" />
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-sm-12">
+            <h2>Your daily meme:</h2>
+            
+            <p th:text="'- ' + ${randomMeme}" />
+
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
+
+</html>
