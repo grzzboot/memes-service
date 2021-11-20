@@ -35,7 +35,7 @@ kustomize build ${KUSTOMIZE_MEMES_DIR}
 
 kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl apply -f -
 
-kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl delete -f -
+#kustomize build ${KUSTOMIZE_MEMES_DIR} | kubectl delete -f -
 
 
 HELM_DIR="$ROOT_DIR/helm"
@@ -47,3 +47,4 @@ helm3 repo update
 
 helm3 upgrade --install memes-database bitnami/postgresql -n memes -f ${HELM_DATABASE_DIR}/values-memes.yaml --wait
 
+# Create the memes-service using Helm, show outputs
