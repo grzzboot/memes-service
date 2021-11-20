@@ -32,5 +32,4 @@ gcloud beta container clusters create "memes-cluster"  \
 # Allocate a public static IP
 gcloud compute addresses create memes-external-static-ip \
 	--project=pingpong-site1-gcp-demo \
-	--network-tier=STANDARD \
 	--region=europe-west3
