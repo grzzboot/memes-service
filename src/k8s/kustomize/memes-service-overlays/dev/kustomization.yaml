@@ -1,0 +1,21 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+namespace: memes
+
+commonLabels:
+  component: memes
+
+resources:
+- ./../base
+
+patchesJSON6902:
+- target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: memes-ingress
+  patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: memes-dev.waymark.se
