@@ -1,0 +1,6 @@
+postgresqlPassword: postgres
+postgresqlDatabase: postgres
+
+persistence:
+  enabled: true
+  storageClass: standard
